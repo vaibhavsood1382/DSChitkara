@@ -1,0 +1,44 @@
+#include<iostream>
+
+using namespace std;
+
+struct node
+{
+    int data;
+    struct node *ptr;
+};
+main()
+{
+   struct node *start;
+   struct node *itr;
+   char a;
+   struct node *x;
+   start=NULL;
+   x=new(struct node);
+   x->ptr=NULL;
+   cout<<"enter the first entry of linked list";
+   cin>>x->data;
+   start=x;
+   cout<<"do you wanna insert more elements y/n";
+   cin>>a;
+
+   while(a=='y')
+   {
+       struct node *y;
+       y=new(struct node);
+       cin>>y->data;
+       y->ptr=start;
+       start=y;
+       cout<<endl<<"do you wanna insert more elements y/n";
+       cin>>a;
+   }
+itr=start;
+   while(itr!=NULL)
+   {
+      
+       cout<<"address    "<<itr<<"/t data  "<<itr->data<<"/t pointer  "<<itr->ptr<<endl;
+       itr=itr->ptr;
+   }
+
+
+}
